@@ -125,9 +125,26 @@ function showCompliment(){document.getElementById("compliment-text").textContent
 document.getElementById("nextCompliment").addEventListener("click",()=>{complimentIndex=(complimentIndex+1)%compliments.length;showCompliment();});
 showCompliment();
 
-/* Birthday button: June 5 is always accessible; homepage card also opens it any day. */
-function showBirthday(){showScreen("birthday");}
-window.showBirthday=showBirthday;
+/* Birthday surprise: visible only on June 5 */
+const birthdayButton = document.getElementById("birthdayButton");
+
+function isBirthday() {
+  const today = new Date();
+  return today.getMonth() === 5 && today.getDate() === 5;
+}
+
+function updateBirthdayButton() {
+  birthdayButton.hidden = !isBirthday();
+}
+
+function showBirthday() {
+  if (!isBirthday()) return;
+  showScreen("birthday");
+}
+
+updateBirthdayButton();
+
+window.showBirthday = showBirthday;
 
 /* EmailJS daily summaries. The two templates should have a {{message}} variable.
    Configure each template's recipient in the EmailJS dashboard. */
