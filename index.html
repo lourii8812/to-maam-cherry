@@ -36,10 +36,25 @@
         </div>
       </div>
       <div class="home-grid">
-        <button class="feature-card" onclick="showScreen('compliments')"><span class="feature-icon">🌷</span><span class="feature-title">Little reminders</span><span class="feature-copy">A collection of kind words</span></button>
-        <button class="feature-card" onclick="showScreen('cherrySummary')"><span class="feature-icon">📖</span><span class="feature-title">Ma’am Cherry’s day</span><span class="feature-copy">Save a little daily update</span></button>
-        <button class="feature-card" onclick="showScreen('lourSummary')"><span class="feature-icon">📝</span><span class="feature-title">Lour’s day</span><span class="feature-copy">A place for my own updates</span></button>
-        <button class="feature-card" onclick="showBirthday()"><span class="feature-icon">🎂</span><span class="feature-title">Birthday surprise</span><span class="feature-copy">A little June 5 celebration</span></button>
+        <button class="feature-card" onclick="showScreen('compliments')">
+          <span class="feature-icon">🌷</span><span class="feature-title">Little reminders</span>
+          <span class="feature-copy">A collection of kind words</span>
+        </button>
+        <button class="feature-card" onclick="showScreen('cherrySummary')">
+          <span class="feature-icon">📖</span>
+          <span class="feature-title">Ma’am Cherry’s day</span>
+          <span class="feature-copy">Save a little daily update</span>
+        </button>
+        <button class="feature-card" onclick="showScreen('lourSummary')">
+          <span class="feature-icon">📝</span>
+          <span class="feature-title">Lour’s day</span>
+          <span class="feature-copy">A place for my own updates</span>
+        </button>
+        <button id="birthdayButton" class="feature-card" onclick="showBirthday()" hidden>
+          <span class="feature-icon">🎂</span>
+          <span class="feature-title">Birthday surprise</span>
+          <span class="feature-copy">A little June 5 celebration</span>
+        </button>      
       </div>
       <p class="tiny-note">Made with appreciation, a little creativity, and lots of purple. <span>♡</span></p>
     </section>
