@@ -1,0 +1,248 @@
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #dbeafe,
+        #c4b5fd,
+        #818cf8,
+        #a78bfa
+    );
+    background-attachment: fixed;
+    color: #252044;
+    font-family: "Lora", Georgia, serif;
+    line-height: 1.7;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* SCREENS */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+
+/* HEADINGS */
+
+l1 {
+    display: block;
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 2.3rem;
+    line-height: 1.5;
+    color: #4338a8;
+    text-align: center;
+    margin: 20px auto;
+}
+
+h1,
+h2 {
+    color: #4338a8;
+}
+
+.subtitle {
+    color: #51477c;
+    margin: 10px auto 25px;
+    max-width: 500px;
+}
+
+.small-note {
+    font-size: 0.85rem;
+    color: #51477c;
+    margin-top: 35px;
+}
+
+
+/* BUTTONS */
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+button {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border: 1px solid #ffffff66;
+    border-radius: 14px;
+    padding: 13px 20px;
+    width: 100%;
+    max-width: 350px;
+    font-family: "Lora", Georgia, serif;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #4338a822;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px #4338a844;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid #4338a8;
+    outline-offset: 3px;
+}
+
+
+/* CARDS AND LETTER */
+
+.content-card,
+.letter-card {
+    background: #ffffffdd;
+    border: 1px solid #ffffffaa;
+    border-radius: 20px;
+    max-width: 650px;
+    width: 100%;
+    margin: 25px auto;
+    padding: 24px;
+    box-shadow: 0 8px 25px #4338a815;
+}
+
+.letter-card {
+    text-align: left;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.letter-card p {
+    margin-bottom: 18px;
+}
+
+#complimentText {
+    font-size: 1.1rem;
+    color: #4338a8;
+    margin-bottom: 25px;
+}
+
+
+/* INPUTS */
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px;
+    margin: 10px auto;
+    border: 2px solid #a78bfa;
+    border-radius: 12px;
+    background: #ffffffee;
+    color: #252044;
+    font-family: "Lora", Georgia, serif;
+    font-size: 1rem;
+}
+
+textarea {
+    max-width: 100%;
+    min-height: 130px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+#wordInput {
+    text-transform: uppercase;
+}
+
+
+/* WORDLE BOARD */
+
+#wordBoard {
+    display: grid;
+    grid-template-columns: repeat(5, 48px);
+    gap: 6px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.word-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: 2px solid #a78bfa;
+    border-radius: 6px;
+    background: #ffffffcc;
+    color: #252044;
+    font-family: "Lora", Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.word-tile.correct {
+    background: #6aaa64;
+    color: white;
+    border-color: #6aaa64;
+}
+
+.word-tile.present {
+    background: #c9b458;
+    color: white;
+    border-color: #c9b458;
+}
+
+.word-tile.absent {
+    background: #787c7e;
+    color: white;
+    border-color: #787c7e;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 24px 14px;
+    }
+
+    l1 {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .content-card,
+    .letter-card {
+        padding: 18px;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+}
