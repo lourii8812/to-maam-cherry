@@ -1,3 +1,21 @@
+
+let WORDS = [];
+
+async function loadWords() {
+    const response = await fetch("./words.txt");
+
+    if (!response.ok) {
+        throw new Error("Could not load words.txt");
+    }
+
+    const text = await response.text();
+    WORDS = text.trim().split(/\s+/);
+
+    console.log(`Loaded ${WORDS.length} words!`);
+}
+
+loadWords().catch(console.error);
+
 /* For Ma'am Cherry — app logic */
 const EMAILJS_PUBLIC_KEY = "GIAfr8cyf7rKLAK5v";
 const EMAILJS_SERVICE_ID = "service_n5t0dz8";
@@ -66,8 +84,7 @@ document.getElementById("rpsReset").addEventListener("click", () => {
 });
 
 /* Mini Wordle */
-const wordList = ["APPLE","BEACH","BLOOM","BRAVE","BREAD","BRICK","CHAIR","CHARM","CHEER","CLOUD","DANCE","DREAM","EARTH","FLAME","FLOUR","FRAME","FRESH","FRIEND","GRACE","GRAPE","GREEN","HEART","HONEY","HOUSE","JUICE","LIGHT","MAGIC","MANGO","MARCH","MATCH","MUSIC","NIGHT","OCEAN","PEACE","PEACH","PLANT","PLATE","PRIDE","QUIET","RIVER","SMILE","SPACE","SPARK","SPEAK","STARS","STONE","SUGAR","SUNNY","SWEET","THANK","TIGER","TRAIN","TRUST","WATER","WORLD"];
-const allowedWords = new Set(wordList);
+const allowedWords = new Set(WORDS);
 let answer = pickWord(), wordGuesses = [], wordFinished = false;
 function pickWord(){ return wordList[Math.floor(Math.random()*wordList.length)]; }
 function scoreWord(guess, target){
