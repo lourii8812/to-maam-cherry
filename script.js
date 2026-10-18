@@ -142,10 +142,10 @@ let wordFinished = false;
 let wordleReady = false;
 
 async function loadWords() {
-  const response = await fetch("./all_5_letter_words.txt", { cache: "no-cache" });
+  const response = await fetch("./all_5_letter_words.txt");
 
   if (!response.ok) {
-    throw new Error(`Could not load words.txt (HTTP ${response.status})`);
+    throw new Error(`Error: Couldn't load word list!`);
   }
 
   const text = await response.text();
